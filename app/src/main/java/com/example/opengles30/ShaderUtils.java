@@ -8,6 +8,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 
 public class ShaderUtils {
+    private static String TAG = ShaderUtils.class.getName();
     /**
      *
      * @param type GL_VERTEX_SHADER GL_FRAGMENT_SHADER
@@ -15,14 +16,17 @@ public class ShaderUtils {
      * @return
      */
     public static int loadShader(int type, String shaderCode) {
+        //创建着色器
         int shader = GLES32.glCreateShader(type);
+        //将着色器源码附加到着色器对象上
         GLES32.glShaderSource(shader, shaderCode);
+        //编译着色器
         GLES32.glCompileShader(shader);
         int[] result = new int[1];
         GLES32.glGetShaderiv(shader, GLES32.GL_COMPILE_STATUS, result, 0);
         if (result[0] == GLES32.GL_FALSE) {
             String log = GLES32.glGetShaderInfoLog(shader);
-            Log.e("abc",log);
+            VLog.Loge(TAG,log);
         }
         return shader;
     }

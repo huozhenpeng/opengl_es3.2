@@ -5,6 +5,7 @@ import android.opengl.GLES32;
 import android.opengl.GLSurfaceView;
 
 import com.example.opengles30.ShaderUtils;
+import com.example.opengles30.VLog;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -14,8 +15,9 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 public class GlRender implements GLSurfaceView.Renderer {
+    private static String TAG = GlRender.class.getName();
     int BYTES_PER_FLOAT = 4;
-    //1、顶点输入
+    //1、顶点数据
     float vertices[] = {
             -0.5f, -0.5f, 0.0f,
             0.5f, -0.5f, 0.0f,
@@ -53,6 +55,7 @@ public class GlRender implements GLSurfaceView.Renderer {
 
         //顶点缓冲对象
         array = new int[1];
+        //生成一个缓冲对象
         GLES32.glGenBuffers(array.length, array, 0);
         vBos[0] = array[0];
 
@@ -63,24 +66,53 @@ public class GlRender implements GLSurfaceView.Renderer {
         mVBFloatBuffer.position(0);
 
         GLES32.glBindVertexArray(vAos[0]);
+        //把新创建的缓冲对象绑定到GL_ARRAY_BUFFER目标上(OpenGL有很多缓冲对象类型，顶点缓冲对象的缓冲类型是GL_ARRAY_BUFFER)
         GLES32.glBindBuffer(GLES32.GL_ARRAY_BUFFER, vBos[0]);
+        /**
+         * 最后一个参数
+         * GL_STATIC_DRAW ：数据不会或几乎不会改变。
+         * GL_DYNAMIC_DRAW：数据会被改变很多。
+         * GL_STREAM_DRAW ：数据每次绘制时都会改变。
+         * 三角形的位置数据不会改变，每次渲染调用时都保持原样，所以它的使用类型最好是GL_STATIC_DRAW。
+         * 如果，比如说一个缓冲中的数据将频繁被改变，那么使用的类型就是GL_DYNAMIC_DRAW或GL_STREAM_DRAW，
+         * 这样就能确保显卡把数据放在能够高速写入的内存部分。
+         */
+        //把之前定义的顶点数据复制到缓冲的内存中
         GLES32.glBufferData(GLES32.GL_ARRAY_BUFFER, vertices.length * BYTES_PER_FLOAT, mVBFloatBuffer, GLES32.GL_STATIC_DRAW);
 
+        //end---------------现在我们已经把顶点数据储存在显卡的内存中，用VBO这个顶点缓冲对象管理---------------------------------
         //着色器
         vShader = ShaderUtils.loadShaderFromAssets(context, GLES32.GL_VERTEX_SHADER, "triangle.vsh");
         fShader = ShaderUtils.loadShaderFromAssets(context, GLES32.GL_FRAGMENT_SHADER, "triangle.fsh");
 
 
         //着色器程序
+        //如果要使用刚才编译的着色器我们必须把它们链接(Link)为一个着色器程序对象，
+        // 然后在渲染对象的时候激活这个着色器程序。已激活着色器程序的着色器将在我们发送渲染调用的时候被使用。
         shaderProgram = GLES32.glCreateProgram();
         GLES32.glAttachShader(shaderProgram, vShader);
         GLES32.glAttachShader(shaderProgram, fShader);
         GLES32.glLinkProgram(shaderProgram);
+        //判断链接是否成功
+        int [] result = new int[1];
+        GLES32.glGetProgramiv(shaderProgram, GLES32.GL_LINK_STATUS, result, 0);
+        if (result[0] == GLES32.GL_FALSE) {
+            String log = GLES32.glGetProgramInfoLog(shaderProgram);
+            VLog.Loge(TAG, log);
+        }
+
+        //激活程序
         GLES32.glUseProgram(shaderProgram);
+        //着色器对象链接到程序对象以后，记得删除着色器对象，我们不再需要它们了
         GLES32.glDeleteShader(vShader);
         GLES32.glDeleteShader(fShader);
 
+        //--------------------现在，我们已经把输入顶点数据发送给了GPU，并指示了GPU如何在顶点和片段着色器中处理它了-----------
 
+        //-------OpenGL还不知道它该如何解释内存中的顶点数据，以及它该如何将顶点数据链接到顶点着色器的属性上。我们需要告诉OpenGL怎么做---------
+
+
+        //在渲染前指定OpenGL该如何解释顶点数据
         GLES32.glVertexAttribPointer(
                 0,//layout(location = 0)
                 3,//顶点属性的大小,顶点属性是一个vec3，它由3个值组成，所以大小是3
@@ -90,6 +122,7 @@ public class GlRender implements GLSurfaceView.Renderer {
                 0
         );
 
+        //以顶点属性位置值作为参数，启用顶点属性；顶点属性默认是禁用的
         GLES32.glEnableVertexAttribArray(0);
     }
 
