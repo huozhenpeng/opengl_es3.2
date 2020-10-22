@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
     <Button
         android:layout_width="100dp"
         android:layout_height="50dp"
@@ -13,6 +18,14 @@
         android:gravity="center"
         android:onClick="drawTriangle"
         />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="四边形"
+            android:gravity="center"
+            android:onClick="drawQuad"
+            />
+    </LinearLayout>
     <android.opengl.GLSurfaceView
         android:id="@+id/glSurfaceView"
         android:layout_width="match_parent"

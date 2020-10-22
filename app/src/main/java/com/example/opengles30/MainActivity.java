@@ -7,6 +7,7 @@ import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.opengles30.quadrilateral.QuadrilateralActivity;
 import com.example.opengles30.triangle.TriangleActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void drawTriangle(View view) {
         Intent intent = new Intent(this, TriangleActivity.class);
+        startActivity(intent);
+    }
+
+    public void drawQuad(View view) {
+        Intent intent = new Intent(this, QuadrilateralActivity.class);
         startActivity(intent);
     }
 }
