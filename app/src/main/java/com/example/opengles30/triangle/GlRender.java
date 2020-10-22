@@ -25,11 +25,11 @@ public class GlRender implements GLSurfaceView.Renderer {
     //2、定义一个顶点缓冲对象
     FloatBuffer mVBFloatBuffer;
 
-    int vbo;
+    int[] vBos = new int[1];
     int vShader;
     int fShader;
     int shaderProgram;
-    int vao;
+    int[] vAos = new int[1];
     Context context;
     public GlRender(Context context) {
         this.context = context;
@@ -48,13 +48,13 @@ public class GlRender implements GLSurfaceView.Renderer {
         //顶点数组对象
         int[] array = new int[1];
         GLES32.glGenVertexArrays(array.length, array, 0);
-        vao = array[0];
+        vAos[0] = array[0];
 
 
         //顶点缓冲对象
         array = new int[1];
         GLES32.glGenBuffers(array.length, array, 0);
-        vbo = array[0];
+        vBos[0] = array[0];
 
         mVBFloatBuffer = ByteBuffer.allocateDirect(vertices.length * BYTES_PER_FLOAT)
                 .order(ByteOrder.nativeOrder())
@@ -62,8 +62,8 @@ public class GlRender implements GLSurfaceView.Renderer {
         mVBFloatBuffer.put(vertices);
         mVBFloatBuffer.position(0);
 
-        GLES32.glBindVertexArray(vao);
-        GLES32.glBindBuffer(GLES32.GL_ARRAY_BUFFER, vbo);
+        GLES32.glBindVertexArray(vAos[0]);
+        GLES32.glBindBuffer(GLES32.GL_ARRAY_BUFFER, vBos[0]);
         GLES32.glBufferData(GLES32.GL_ARRAY_BUFFER, vertices.length * BYTES_PER_FLOAT, mVBFloatBuffer, GLES32.GL_STATIC_DRAW);
 
         //着色器
@@ -80,21 +80,6 @@ public class GlRender implements GLSurfaceView.Renderer {
         GLES32.glDeleteShader(vShader);
         GLES32.glDeleteShader(fShader);
 
-
-
-
-
-
-
-
-//        GLES32.glVertexAttribPointer(
-//                0,//layout(location = 0)
-//                3,//顶点属性的大小,顶点属性是一个vec3，它由3个值组成，所以大小是3
-//                GLES32.GL_FLOAT,//数据的类型, vec*都是由浮点数值组成的
-//                false,//是否希望数据被标准化,如果我们设置为GL_TRUE，所有数据都会被映射到0（对于有符号型signed数据是-1）到1之间
-//                3 * BYTES_PER_FLOAT,//步长,连续的顶点属性组之间的间隔
-//                mVBFloatBuffer
-//        );
 
         GLES32.glVertexAttribPointer(
                 0,//layout(location = 0)
@@ -129,7 +114,7 @@ public class GlRender implements GLSurfaceView.Renderer {
         GLES32.glUseProgram(shaderProgram);
         GLES32.glEnableVertexAttribArray(0);
 
-        GLES32.glBindVertexArray(vao);
+        GLES32.glBindVertexArray(vAos[0]);
 
 
         GLES32.glDrawArrays(GLES32.GL_TRIANGLES, 0, 3);
@@ -137,5 +122,11 @@ public class GlRender implements GLSurfaceView.Renderer {
         GLES32.glBindVertexArray(0);
         GLES32.glDisableVertexAttribArray(0);
 
+    }
+
+    public void destroy() {
+        GLES32.glDeleteVertexArrays(1, vAos,0);
+        GLES32.glDeleteBuffers(1, vBos, 0);
+        GLES32.glDeleteProgram(shaderProgram);
     }
 }

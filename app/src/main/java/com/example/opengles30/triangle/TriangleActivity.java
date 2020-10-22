@@ -10,6 +10,7 @@ import com.example.opengles30.R;
 public class TriangleActivity extends AppCompatActivity {
 
     private GLSurfaceView glSurfaceView;
+    private GlRender glRender;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,7 +18,16 @@ public class TriangleActivity extends AppCompatActivity {
         glSurfaceView = findViewById(R.id.glSurfaceView);
         //必须设置，否则都无法加载shader
         glSurfaceView.setEGLContextClientVersion(3);
-        glSurfaceView.setRenderer(new GlRender(this));
+        glRender = new GlRender(this);
+        glSurfaceView.setRenderer(glRender);
         glSurfaceView.setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (glRender != null) {
+            glRender.destroy();
+        }
     }
 }
