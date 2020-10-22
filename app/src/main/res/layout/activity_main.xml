@@ -25,6 +25,13 @@
             android:gravity="center"
             android:onClick="drawQuad"
             />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="着色器传值"
+            android:gravity="center"
+            android:onClick="passValue"
+            />
     </LinearLayout>
     <android.opengl.GLSurfaceView
         android:id="@+id/glSurfaceView"

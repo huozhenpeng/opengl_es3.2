@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".triangle.TriangleActivity"/>
         <activity android:name=".quadrilateral.QuadrilateralActivity"/>
+        <activity android:name=".passvalue.PassValueActivity"/>
     </application>
 
 </manifest>

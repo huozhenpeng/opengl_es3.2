@@ -7,6 +7,7 @@ import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.opengles30.passvalue.PassValueActivity;
 import com.example.opengles30.quadrilateral.QuadrilateralActivity;
 import com.example.opengles30.triangle.TriangleActivity;
 
@@ -30,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void drawQuad(View view) {
         Intent intent = new Intent(this, QuadrilateralActivity.class);
+        startActivity(intent);
+    }
+
+    public void passValue(View view) {
+        Intent intent = new Intent(this, PassValueActivity.class);
         startActivity(intent);
     }
 }
