@@ -10,6 +10,7 @@ import android.view.View;
 import com.example.opengles30.passvalue.PassValueActivity;
 import com.example.opengles30.quadrilateral.QuadrilateralActivity;
 import com.example.opengles30.triangle.TriangleActivity;
+import com.example.opengles30.uniform.PassValueByUniformActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void passValue(View view) {
         Intent intent = new Intent(this, PassValueActivity.class);
+        startActivity(intent);
+    }
+
+    public void uniformPassValue(View view) {
+        Intent intent = new Intent(this, PassValueByUniformActivity.class);
         startActivity(intent);
     }
 }

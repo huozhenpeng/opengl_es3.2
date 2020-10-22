@@ -32,6 +32,13 @@
             android:gravity="center"
             android:onClick="passValue"
             />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="uniform传值"
+            android:gravity="center"
+            android:onClick="uniformPassValue"
+            />
     </LinearLayout>
     <android.opengl.GLSurfaceView
         android:id="@+id/glSurfaceView"
