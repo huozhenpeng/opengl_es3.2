@@ -39,6 +39,13 @@
             android:gravity="center"
             android:onClick="uniformPassValue"
             />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="利用顶点数据传递颜色"
+            android:gravity="center"
+            android:onClick="verTexColor"
+            />
     </LinearLayout>
     <android.opengl.GLSurfaceView
         android:id="@+id/glSurfaceView"

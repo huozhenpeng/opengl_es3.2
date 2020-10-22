@@ -20,6 +20,7 @@
         <activity android:name=".quadrilateral.QuadrilateralActivity"/>
         <activity android:name=".passvalue.PassValueActivity"/>
         <activity android:name=".uniform.PassValueByUniformActivity"/>
+        <activity android:name=".vertexcolor.VertexColorActivity"/>
     </application>
 
 </manifest>

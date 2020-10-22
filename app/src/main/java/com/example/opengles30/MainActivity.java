@@ -11,6 +11,7 @@ import com.example.opengles30.passvalue.PassValueActivity;
 import com.example.opengles30.quadrilateral.QuadrilateralActivity;
 import com.example.opengles30.triangle.TriangleActivity;
 import com.example.opengles30.uniform.PassValueByUniformActivity;
+import com.example.opengles30.vertexcolor.VertexColorActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void uniformPassValue(View view) {
         Intent intent = new Intent(this, PassValueByUniformActivity.class);
+        startActivity(intent);
+    }
+
+    public void verTexColor(View view) {
+        Intent intent = new Intent(this, VertexColorActivity.class);
         startActivity(intent);
     }
 }
