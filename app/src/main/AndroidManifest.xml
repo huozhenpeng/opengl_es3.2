@@ -25,6 +25,7 @@
         <activity android:name=".multexture.MulTextureActivity"/>
         <activity android:name=".matrix.MatrixActivity"/>
         <activity android:name=".coordinatesystem.Matrix3D_1Activity"/>
+        <activity android:name=".coordnate_3d_2.Matrix3D_2Activity"/>
     </application>
 
 </manifest>

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.opengles30.coordinatesystem.Matrix3D_1Activity;
+import com.example.opengles30.coordnate_3d_2.Matrix3D_2Activity;
 import com.example.opengles30.matrix.MatrixActivity;
 import com.example.opengles30.multexture.MulTextureActivity;
 import com.example.opengles30.passvalue.PassValueActivity;
@@ -72,6 +73,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void matrix_3d_1(View view) {
         Intent intent = new Intent(this, Matrix3D_1Activity.class);
+        startActivity(intent);
+    }
+
+    public void matrix_3d_2(View view) {
+        Intent intent = new Intent(this, Matrix3D_2Activity.class);
         startActivity(intent);
     }
 }

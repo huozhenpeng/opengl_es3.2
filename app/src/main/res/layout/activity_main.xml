@@ -74,6 +74,13 @@
             android:gravity="center"
             android:onClick="matrix_3d_1"
             />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="立方体"
+            android:gravity="center"
+            android:onClick="matrix_3d_2"
+            />
     </LinearLayout>
     <android.opengl.GLSurfaceView
         android:id="@+id/glSurfaceView"
