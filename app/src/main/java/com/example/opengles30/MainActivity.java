@@ -7,6 +7,7 @@ import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.opengles30.coordinatesystem.Matrix3D_1Activity;
 import com.example.opengles30.matrix.MatrixActivity;
 import com.example.opengles30.multexture.MulTextureActivity;
 import com.example.opengles30.passvalue.PassValueActivity;
@@ -66,6 +67,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void matrixRotateScale(View view) {
         Intent intent = new Intent(this, MatrixActivity.class);
+        startActivity(intent);
+    }
+
+    public void matrix_3d_1(View view) {
+        Intent intent = new Intent(this, Matrix3D_1Activity.class);
         startActivity(intent);
     }
 }

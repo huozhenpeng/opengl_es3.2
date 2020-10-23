@@ -67,6 +67,13 @@
             android:gravity="center"
             android:onClick="matrixRotateScale"
             />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="3D-1"
+            android:gravity="center"
+            android:onClick="matrix_3d_1"
+            />
     </LinearLayout>
     <android.opengl.GLSurfaceView
         android:id="@+id/glSurfaceView"
