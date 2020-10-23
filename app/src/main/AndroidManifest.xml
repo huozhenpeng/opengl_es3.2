@@ -21,6 +21,7 @@
         <activity android:name=".passvalue.PassValueActivity"/>
         <activity android:name=".uniform.PassValueByUniformActivity"/>
         <activity android:name=".vertexcolor.VertexColorActivity"/>
+        <activity android:name=".texture.TextureActivity"/>
     </application>
 
 </manifest>

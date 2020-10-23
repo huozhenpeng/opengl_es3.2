@@ -46,6 +46,13 @@
             android:gravity="center"
             android:onClick="verTexColor"
             />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="纹理"
+            android:gravity="center"
+            android:onClick="texTure"
+            />
     </LinearLayout>
     <android.opengl.GLSurfaceView
         android:id="@+id/glSurfaceView"
