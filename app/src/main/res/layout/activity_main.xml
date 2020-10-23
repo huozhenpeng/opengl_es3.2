@@ -60,6 +60,13 @@
             android:gravity="center"
             android:onClick="mulTexTure"
             />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="矩阵变换"
+            android:gravity="center"
+            android:onClick="matrixRotateScale"
+            />
     </LinearLayout>
     <android.opengl.GLSurfaceView
         android:id="@+id/glSurfaceView"

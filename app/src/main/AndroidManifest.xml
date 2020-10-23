@@ -23,6 +23,7 @@
         <activity android:name=".vertexcolor.VertexColorActivity"/>
         <activity android:name=".texture.TextureActivity"/>
         <activity android:name=".multexture.MulTextureActivity"/>
+        <activity android:name=".matrix.MatrixActivity"/>
     </application>
 
 </manifest>
