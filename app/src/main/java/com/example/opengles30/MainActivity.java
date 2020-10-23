@@ -7,6 +7,7 @@ import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.opengles30.multexture.MulTextureActivity;
 import com.example.opengles30.passvalue.PassValueActivity;
 import com.example.opengles30.quadrilateral.QuadrilateralActivity;
 import com.example.opengles30.texture.TextureActivity;
@@ -54,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void texTure(View view) {
         Intent intent = new Intent(this, TextureActivity.class);
+        startActivity(intent);
+    }
+
+    public void mulTexTure(View view) {
+        Intent intent = new Intent(this, MulTextureActivity.class);
         startActivity(intent);
     }
 }

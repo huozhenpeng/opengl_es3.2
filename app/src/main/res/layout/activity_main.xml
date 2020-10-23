@@ -53,6 +53,13 @@
             android:gravity="center"
             android:onClick="texTure"
             />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="多个纹理"
+            android:gravity="center"
+            android:onClick="mulTexTure"
+            />
     </LinearLayout>
     <android.opengl.GLSurfaceView
         android:id="@+id/glSurfaceView"
