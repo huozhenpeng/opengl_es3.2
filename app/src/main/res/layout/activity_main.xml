@@ -88,6 +88,13 @@
             android:gravity="center"
             android:onClick="matrix_3d_3"
             />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="摄像机"
+            android:gravity="center"
+            android:onClick="camera"
+            />
     </LinearLayout>
     <android.opengl.GLSurfaceView
         android:id="@+id/glSurfaceView"
