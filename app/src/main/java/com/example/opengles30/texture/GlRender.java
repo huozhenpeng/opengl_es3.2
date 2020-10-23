@@ -24,10 +24,10 @@ public class GlRender implements GLSurfaceView.Renderer {
     int BYTES_PER_FLOAT = 4;
     float vertices[] = {
 //     ---- 位置 ----       ---- 颜色 ----     - 纹理坐标 -
-            0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // 右上
-            0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // 右下
-            -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // 左下
-            -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // 左上
+            0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 0.0f,   // 右上
+            0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 1.0f,   // 右下
+            -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 1.0f,   // 左下
+            -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 0.0f    // 左上
     };
     //定义索引
     int indices[] = { // 注意索引从0开始!
@@ -83,7 +83,7 @@ public class GlRender implements GLSurfaceView.Renderer {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inScaled = false;
 //        options.inJustDecodeBounds = true;
-        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), R.mipmap.texturebox, options);
+        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), R.mipmap.face, options);
         /**
          * level:参数为纹理指定多级渐远纹理的级别,0也就是基本级别。
          * border:应该总是被设为0（历史遗留的问题）
