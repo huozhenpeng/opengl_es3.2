@@ -6,96 +6,107 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
     <Button
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="三角形"
         android:gravity="center"
         android:onClick="drawTriangle"
         />
         <Button
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="四边形"
             android:gravity="center"
             android:onClick="drawQuad"
             />
         <Button
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="着色器传值"
             android:gravity="center"
             android:onClick="passValue"
             />
         <Button
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="uniform传值"
             android:gravity="center"
             android:onClick="uniformPassValue"
             />
         <Button
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="利用顶点数据传递颜色"
             android:gravity="center"
             android:onClick="verTexColor"
             />
         <Button
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="纹理"
             android:gravity="center"
             android:onClick="texTure"
             />
         <Button
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="多个纹理"
             android:gravity="center"
             android:onClick="mulTexTure"
             />
         <Button
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="矩阵变换"
             android:gravity="center"
             android:onClick="matrixRotateScale"
             />
         <Button
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="3D-1"
             android:gravity="center"
             android:onClick="matrix_3d_1"
             />
         <Button
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="立方体"
             android:gravity="center"
             android:onClick="matrix_3d_2"
             />
         <Button
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="多个立方体"
             android:gravity="center"
             android:onClick="matrix_3d_3"
             />
         <Button
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="摄像机"
             android:gravity="center"
             android:onClick="camera"
             />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="摄像机circle"
+            android:gravity="center"
+            android:onClick="cameraCircle"
+            />
     </LinearLayout>
+    </ScrollView>
     <android.opengl.GLSurfaceView
         android:id="@+id/glSurfaceView"
         android:layout_width="match_parent"

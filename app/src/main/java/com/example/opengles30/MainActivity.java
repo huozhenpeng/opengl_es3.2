@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.opengles30.camera.CameraActivityChangeZ;
+import com.example.opengles30.camera_circle.CameraActivityCircle;
 import com.example.opengles30.coordinatesystem.Matrix3D_1Activity;
 import com.example.opengles30.coordnate_3d_2.Matrix3D_2Activity;
 import com.example.opengles30.coordnate_3d_3.Matrix3D_3Activity;
@@ -90,6 +91,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void camera(View view) {
         Intent intent = new Intent(this, CameraActivityChangeZ.class);
+        startActivity(intent);
+    }
+
+    public void cameraCircle(View view) {
+        Intent intent = new Intent(this, CameraActivityCircle.class);
         startActivity(intent);
     }
 }

@@ -1,21 +1,16 @@
-package com.example.opengles30.camera;
+package com.example.opengles30.camera_circle;
 
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.SeekBar;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatSeekBar;
 
 import com.example.opengles30.R;
 
-public class CameraActivityChangeZ extends AppCompatActivity {
+public class CameraActivityCircle extends AppCompatActivity {
 
     private GLSurfaceView glSurfaceView;
     protected GlRender glRender;
-    private AppCompatSeekBar seekBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,24 +21,6 @@ public class CameraActivityChangeZ extends AppCompatActivity {
         glRender = new GlRender(this);
         glSurfaceView.setRenderer(glRender);
         glSurfaceView.setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
-        seekBar = findViewById(R.id.seekBar);
-        seekBar.setVisibility(View.VISIBLE);
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                glRender.setCameraZPosition(progress);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
     }
 
     @Override
