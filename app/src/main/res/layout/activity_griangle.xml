@@ -19,6 +19,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="30dp"
         android:max="50"
+        android:min="-50"
         android:progress="3"
         android:visibility="gone"
         />

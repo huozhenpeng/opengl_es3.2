@@ -29,6 +29,7 @@
         <activity android:name=".coordnate_3d_3.Matrix3D_3Activity"/>
         <activity android:name=".camera.CameraActivityChangeZ"/>
         <activity android:name=".camera_circle.CameraActivityCircle"/>
+        <activity android:name=".cameralrtb.CameraActivityLRTB"/>
     </application>
 
 </manifest>

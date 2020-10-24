@@ -105,6 +105,13 @@
             android:gravity="center"
             android:onClick="cameraCircle"
             />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="手势移动摄像机"
+            android:gravity="center"
+            android:onClick="moveCamera"
+            />
     </LinearLayout>
     </ScrollView>
     <android.opengl.GLSurfaceView
