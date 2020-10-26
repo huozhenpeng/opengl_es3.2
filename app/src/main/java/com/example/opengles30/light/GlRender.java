@@ -1,14 +1,10 @@
-package com.example.opengles30.color;
+package com.example.opengles30.light;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.opengl.GLES32;
 import android.opengl.GLSurfaceView;
-import android.opengl.GLUtils;
 import android.opengl.Matrix;
 
-import com.example.opengles30.R;
 import com.example.opengles30.ShaderUtils;
 import com.example.opengles30.VLog;
 

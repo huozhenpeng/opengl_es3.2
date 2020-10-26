@@ -1,4 +1,4 @@
-package com.example.opengles30.color;
+package com.example.opengles30.light;
 
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
