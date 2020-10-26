@@ -112,6 +112,13 @@
             android:gravity="center"
             android:onClick="moveCamera"
             />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="光照"
+            android:gravity="center"
+            android:onClick="light"
+            />
     </LinearLayout>
     </ScrollView>
     <android.opengl.GLSurfaceView

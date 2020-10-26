@@ -30,6 +30,7 @@
         <activity android:name=".camera.CameraActivityChangeZ"/>
         <activity android:name=".camera_circle.CameraActivityCircle"/>
         <activity android:name=".cameralrtb.CameraActivityLRTB"/>
+        <activity android:name=".color.ColorActivity"/>
     </application>
 
 </manifest>
