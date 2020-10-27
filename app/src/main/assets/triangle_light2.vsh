@@ -10,5 +10,7 @@ void main() {
     //注意乘法要从右往左读
     gl_Position = projection * view * model * vec4(aPos.x, aPos.y, aPos.z, 1.0);
     FragPos = vec3(model * vec4(aPos, 1.0));
-    Normal = aNormal;
+//    Normal = aNormal;
+    //使用inverse和transpose函数自己生成这个法线矩阵
+    Normal = mat3(transpose(inverse(model))) * aNormal;
 }
