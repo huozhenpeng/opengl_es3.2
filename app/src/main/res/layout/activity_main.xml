@@ -126,6 +126,13 @@
             android:gravity="center"
             android:onClick="light2"
             />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="镜面反射"
+            android:gravity="center"
+            android:onClick="light3"
+            />
     </LinearLayout>
     </ScrollView>
     <android.opengl.GLSurfaceView

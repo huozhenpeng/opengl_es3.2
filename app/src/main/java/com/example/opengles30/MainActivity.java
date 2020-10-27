@@ -15,6 +15,7 @@ import com.example.opengles30.coordinatesystem.Matrix3D_1Activity;
 import com.example.opengles30.coordnate_3d_2.Matrix3D_2Activity;
 import com.example.opengles30.coordnate_3d_3.Matrix3D_3Activity;
 import com.example.opengles30.light_2.Color2Activity;
+import com.example.opengles30.light_3.Color3Activity;
 import com.example.opengles30.matrix.MatrixActivity;
 import com.example.opengles30.multexture.MulTextureActivity;
 import com.example.opengles30.passvalue.PassValueActivity;
@@ -114,6 +115,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void light2(View view) {
         Intent intent = new Intent(this, Color2Activity.class);
+        startActivity(intent);
+    }
+
+    public void light3(View view) {
+        Intent intent = new Intent(this, Color3Activity.class);
         startActivity(intent);
     }
 }

@@ -32,6 +32,7 @@
         <activity android:name=".cameralrtb.CameraActivityLRTB"/>
         <activity android:name=".light.ColorActivity"/>
         <activity android:name=".light_2.Color2Activity"/>
+        <activity android:name=".light_3.Color3Activity"/>
     </application>
 
 </manifest>
