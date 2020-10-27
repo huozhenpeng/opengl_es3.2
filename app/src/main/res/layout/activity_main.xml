@@ -119,6 +119,13 @@
             android:gravity="center"
             android:onClick="light"
             />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="光照2"
+            android:gravity="center"
+            android:onClick="light2"
+            />
     </LinearLayout>
     </ScrollView>
     <android.opengl.GLSurfaceView

@@ -10,10 +10,11 @@ import android.view.View;
 import com.example.opengles30.camera.CameraActivityChangeZ;
 import com.example.opengles30.camera_circle.CameraActivityCircle;
 import com.example.opengles30.cameralrtb.CameraActivityLRTB;
-import com.example.opengles30.color.ColorActivity;
+import com.example.opengles30.light.ColorActivity;
 import com.example.opengles30.coordinatesystem.Matrix3D_1Activity;
 import com.example.opengles30.coordnate_3d_2.Matrix3D_2Activity;
 import com.example.opengles30.coordnate_3d_3.Matrix3D_3Activity;
+import com.example.opengles30.light_2.Color2Activity;
 import com.example.opengles30.matrix.MatrixActivity;
 import com.example.opengles30.multexture.MulTextureActivity;
 import com.example.opengles30.passvalue.PassValueActivity;
@@ -108,6 +109,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void light(View view) {
         Intent intent = new Intent(this, ColorActivity.class);
+        startActivity(intent);
+    }
+
+    public void light2(View view) {
+        Intent intent = new Intent(this, Color2Activity.class);
         startActivity(intent);
     }
 }
